@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<html>
+<head>
+    <title>Welcome to my site</title>
+    {% block title %} {% endblock %}
+    {% load staticfiles %}
+</head>
+<body>
+<header>
+    <h1>Django Administration</h1>
+</header>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Login Page</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+    <h2>Login Form</h2>
+        {{ error_message }}<br><br>
+        <form action="{% url 'trainingapp:login_user' %}" method="post" enctype="multipart/form-data" class="form-inline">
+            {% csrf_token %}
+          <div class="form-group">
+            <label for="user">Username:</label>
+            <input type="text" class="form-control" id="user" placeholder="Username" name="username">
+          </div><br><br>
+          <div class="form-group">
+            <label for="pass">Password:</label>
+            <input type="password" class="form-control" id="pass" placeholder="Password" name="password">
+          </div><br><br>
+            <div>
+                <div class="col-sm-offset-1 ">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </form>
+
+{#        <form action="{% url 'trainingapp:login_user' %}" method="post" enctype="multipart/form-data" >#}
+{#            {% csrf_token %}#}
+{#            <br>#}
+{#            <label for="user">Username:</label>#}
+{#            <input type="text" id="user" name="username"><br><br>#}
+{#            <label for="pass">Password:</label>#}
+{#            <input type="password" id="pass" name="password"><br><br>#}
+{#            <button type="submit">Login</button>#}
+{#        </form>#}
+
+            Don't have an acoount?<a href="{% url 'trainingapp:register' %}">Click here </a>to register
+
+</div>
+{% endblock %}
